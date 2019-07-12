@@ -2,7 +2,7 @@
 DIR=$(dirname "$0") && . $DIR/common.sh
 if ishelp $1; then
     echo "$0 <input.ext> <output.ext> <start> <end>"
-    echo "\tTime unit syntax: HOURS:MM:SS.MILLISECONDS"
+    echo -e "\tTime unit syntax: HOURS:MM:SS.MILLISECONDS"
     exit
 fi
 
