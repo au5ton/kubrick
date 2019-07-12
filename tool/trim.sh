@@ -22,6 +22,6 @@ if [ "$5" = "--dirty" ]; then
     time ffmpeg -ss "$preseek" -i "$1" -ss 00:00:01 -t "$duration" -c copy -map 0 "$2"
 else
     # re-encode
-    time ffmpeg -ss "$preseek" -i "$1" -ss 00:00:01 -t "$duration" -c:v libx264 -preset veryfast -crf 22 -c:a copy "$2"
+    time ffmpeg -ss "$preseek" -i "$1" -ss 00:00:01 -t "$duration" -c:v libx264 -preset veryfast -crf 22 -c:a copy -c:s copy "$2"
 fi
 
