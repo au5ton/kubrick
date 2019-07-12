@@ -9,15 +9,17 @@ ishelp() {
     #justbashthings
 }
 
-export KUBRICK_DIR=$(dirname "$0")
+export KUBRICK_DIR=`cd $(dirname "$0"); cd ..; pwd`
 export KUBRICK_FONT="IBMPlexMono-Regular.ttf"
-export KUBRICK_FONTPATH="$KUBRICK_DIR/$KUBRICK_FONT"
+export KUBRICK_FONTPATH="$KUBRICK_DIR/temp/$KUBRICK_FONT"
+export KUBRICK_TEMPDIR="$KUBRICK_DIR/temp"
+export KUBRICK_TOOLPATH="$KUBRICK_DIR/tool"
 
 fontcheck() {
     if test -f "$KUBRICK_FONTPATH"; then
         return 0
     else
-        $KUBRICK_DIR/download_font.sh
+        $KUBRICK_DIR/lib/download_font.sh
         return 0
     fi
 }

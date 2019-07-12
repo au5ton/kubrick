@@ -1,5 +1,5 @@
 #!/bin/bash
-DIR=$(dirname "$0") && . $DIR/common.sh
+DIR=`cd $(dirname "$0"); cd ..; pwd` && . $DIR/lib/common.sh
 if ishelp $1; then
     echo "$0 <input.ext> <output.ext>"
     exit
