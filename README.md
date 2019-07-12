@@ -10,5 +10,11 @@ Help menu:
 - `foo.sh -h`
 - `foo.sh`
 
+##### Dependencies
+- `ffmpeg`
+- `bash`
+- `wget`
+- `bc`: arbitrary precision numeric processing language
+
 ##### Resources
 [ffmprovisr](https://amiaopensource.github.io/ffmprovisr/) helped write this

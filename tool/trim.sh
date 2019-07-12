@@ -9,12 +9,16 @@ fi
 
 # start timecode in seconds
 start=$(codes2seconds "$3")
+echo "start: $start"
 # one second before the desired start time
 preseek=$(bc <<< "$start - 1")
+echo "preseek (s): $preeseek"
 # duration of the clip
 duration=$(subtracttimes "$3" "$4")
+echo "duration: $duration"
 # convert seconds to code for -ss
 preseek=$(seconds2codes "$preseek")
+echo "preseek (c): $preseek"
 
 # old way
 # time ffmpeg -i "$1" -ss "$3" -to "$4" -c copy -map 0 "$2"
