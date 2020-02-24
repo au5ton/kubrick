@@ -151,7 +151,7 @@ folder_scaffold(os.path.abspath(args.report_dir))
 
 # libx265
 libx265 = dict()
-libx265['crf_range'] = range(27,28)
+libx265['crf_range'] = range(22,28)
 libx265['presets'] = ['ultrafast', 'superfast', 'veryfast', 'faster', 'fast', 'medium', 'slow', 'slower', 'veryslow']
 libx265['dir'] = os.path.join(report_dir, 'libx265')
 
@@ -168,7 +168,6 @@ for src in tqdm(samples, desc='Source sample files', unit='file', position=3):
         
         # GPU experiment first
         for cq in tqdm(hevc_nvenc['cq_range'], desc='Testing hevc_nvenc -cq <int> (constant quality factor)', unit='experiment', position=2):
-            continue
             experiment_hevc_nvenc(src, cq, writer)
         sys.stdout.write("\033[F") #back to previous line
         sys.stdout.write("\033[K") #clear line
