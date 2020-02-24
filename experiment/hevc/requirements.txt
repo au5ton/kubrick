@@ -1,0 +1,4 @@
+halo==0.0.28
+tqdm==4.41.1
+ffpb==0.2.0.post1
+GPUtil==1.4.0
